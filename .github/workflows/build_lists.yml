@@ -1,7 +1,6 @@
 name: Build and update anti-AD lists
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - adlist-maker
@@ -27,7 +26,7 @@ jobs:
     - name: Build lists
       working-directory: adlist-maker
       run: |
-        echo "This build is triggered without upstream update"
+        echo "Triggered by ${{ github.event_name }} event."
         /bin/bash ./scripts/build-list.sh
 
     - name: Commit and push
