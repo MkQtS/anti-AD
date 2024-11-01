@@ -66,15 +66,40 @@ jobs:
         sudo apt-get update
         sudo apt-get install sing-box
 
-    - name: Compile sing-box rule-set
+    - name: Install mihomo
+      env:
+        DEBIAN_FRONTEND: noninteractive
+      run: |
+        case "$(uname -m)" in
+        'x86_64') ARCH='amd64' ;;
+        'x86' | 'i686' | 'i386') ARCH='386' ;;
+        'aarch64' | 'arm64') ARCH='arm64' ;;
+        'armv7l') ARCH='armv7' ;;
+        'riscv64') ARCH='riscv64' ;;
+        's390x') ARCH='s390x' ;;
+        *) ARCH='unknown' ;;
+        esac
+        echo "The architecture is: $ARCH"
+        [ "$ARCH" = 'unknown' ] || {
+          MIHOMO_VER=$(wget -q -O - 'https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/version.txt')
+          # e.g. alpha-3e966e8
+          URL='https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-'$ARCH'-'$MIHOMO_VER'.deb'
+          # e.g. https://github.com/MetaCubeX/mihomo/releases/download/Prerelease-Alpha/mihomo-linux-amd64-alpha-3e966e8.deb
+          wget -q -O ./mihomo.deb "$URL"
+          sudo apt install ./mihomo.deb
+        }
+
+    - name: Compile binary for sing-box/mihomo
       working-directory: master
       run: |
         sing-box rule-set convert --type adguard ./anti-ad-adguard.txt --output ./anti-ad-sing-box.srs
+        mihomo convert-ruleset domain yaml ./anti-ad-clash.yaml ./anti-ad-mihomo.mrs
         echo '========================================'
         sha256sum ./anti-ad-sing-box.srs
+        sha256sum ./anti-ad-mihomo.mrs
         echo '========================================'
 
-    - name: Update website lists
+    - name: Update website files
       run: |
         cat ./master/anti-ad-easylist.txt >./website/docs/easylist.txt
         cat ./master/anti-ad-easylist.txt.md5 >./website/docs/easylist.txt.md5
@@ -86,6 +111,7 @@ jobs:
         cat ./master/anti-ad-surge.txt >./website/docs/surge.txt
         cat ./master/anti-ad-surge2.txt >./website/docs/surge2.txt
         cat ./master/anti-ad-clash.yaml >./website/docs/clash.yaml
+        cat ./master/anti-ad-mihomo.mrs >./website/docs/mihomo.mrs
         cat ./master/anti-ad-domains.txt >./website/docs/domains.txt
         cat ./master/anti-ad-sing-box.srs >./website/docs/anti-ad-sing-box.srs
         echo '========================================'
@@ -98,3 +124,11 @@ jobs:
   #      git config --global user.name "GitHub Action[bot]"
   #      git commit -am "Sync latest lists"
   #      git push
+
+    - name: Commit and push
+      working-directory: master
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action[bot]"
+        git commit -am "Auto renew the anti-AD list."
+        git push
