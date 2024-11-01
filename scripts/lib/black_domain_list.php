@@ -1535,7 +1535,7 @@ return [
         "ye.dun.163yun.com", // #971
     ],
     "mytest.com" => [
-        "d.mytest.com",
+        "f.mytest.com",
     ],
 
     "2mdn-cn.net" => ["2mdn-cn.net"],
