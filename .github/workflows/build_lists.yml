@@ -1,13 +1,10 @@
 name: Build and update anti-AD lists
 
 on:
-  push:
-    branches:
-      - 'adlist-maker'
+  workflow_dispatch:
   workflow_run:
     workflows: [Update upstream]
     types: [completed]
-  workflow_dispatch:
 
 jobs:
   build:
