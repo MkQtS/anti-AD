@@ -5,7 +5,7 @@ on:
     branches:
       - adlist-maker
     paths:
-      - '*.php'
+      - '**.php'
 
 jobs:
   build:
