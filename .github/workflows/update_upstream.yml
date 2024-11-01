@@ -1,0 +1,30 @@
+name: Update upstream
+
+on:
+  schedule:
+    - cron:  '30 18 */3 * *'
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Get source code
+      uses: actions/checkout@v4
+      with:
+        ref: adlist-maker
+        path: adlist-maker
+
+    - name: Get latest upstream lists
+      working-directory: adlist-maker
+      run: |
+        /bin/bash ./scripts/prepare-upstream.sh
+
+    - name: Commit and push
+      working-directory: adlist-maker
+      run: |
+        git config --global user.email "action@github.com"
+        git config --global user.name "GitHub Action[bot]"
+        git commit -am "Update upstream lists"
+        git push
