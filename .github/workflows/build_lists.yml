@@ -4,6 +4,12 @@ on:
   workflow_run:
     workflows: [Update upstream]
     types: [completed]
+  push:
+    branches:
+      - adlist-maker
+    paths:
+      - '*.php'
+  workflow_dispatch:
 
 jobs:
   build:
@@ -24,7 +30,7 @@ jobs:
     - name: Build lists
       working-directory: adlist-maker
       run: |
-        echo "This build is triggered by scheduled upstream update"
+        echo "Triggered by ${{ github.event_name }} event."
         /bin/bash ./scripts/build-list.sh
 
     - name: Commit and push
