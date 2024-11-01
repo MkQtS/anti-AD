@@ -7,9 +7,7 @@ on:
     types: [completed]
   push:
     branches:
-      - 'adlist-maker'
-    paths:
-      - '**.php'
+      - adlist-maker
 
 jobs:
   build:
