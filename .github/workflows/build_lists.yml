@@ -6,7 +6,8 @@ on:
     workflows: [Update upstream]
     types: [completed]
   push:
-    branches: [ adlist-maker ]
+    branches:
+      - 'adlist-maker'
     paths:
       - '**.php'
 
