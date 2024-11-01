@@ -1,5 +1,5 @@
 #TITLE=anti-AD
-#VER=20241101173034
+#VER=20241101182654
 #URL=https://github.com/privacy-protection-tools/anti-AD
 #TOTAL_LINES=100457
 000dn.com
@@ -60977,7 +60977,7 @@ pop.code.mytanwan.com
 sy.code.mytanwan.com
 sy.flash.mytanwan.com
 myteamdev.com
-j.mytest.com
+k.mytest.com
 mytestminer.xyz
 nzmkzl.mytheresa.com
 mythicsallies.com

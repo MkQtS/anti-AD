@@ -1,5 +1,5 @@
 #TITLE=anti-AD
-#VER=20241101173034
+#VER=20241101182655
 #URL=https://github.com/privacy-protection-tools/anti-AD
 #TOTAL_LINES=92769
 host-suffix,000dn.com,reject
@@ -54799,7 +54799,7 @@ host-suffix,eco.myt7th.xyz,reject
 host-suffix,mvo.myt7th.xyz,reject
 host-suffix,mytanwan.com,reject
 host-suffix,myteamdev.com,reject
-host-suffix,j.mytest.com,reject
+host-suffix,k.mytest.com,reject
 host-suffix,mytestminer.xyz,reject
 host-suffix,nzmkzl.mytheresa.com,reject
 host-suffix,mythicsallies.com,reject
