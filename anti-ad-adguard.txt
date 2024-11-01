@@ -1,7 +1,7 @@
 !Title: anti-AD for AdGuard
-!Version: 20241101082227399064819
-!Last modified: Fri Nov  1 08:22:27 UTC 2024
-!Updated: 2024-11-01T08:22:27+00:00
+!Version: 20241101082539205432430
+!Last modified: Fri Nov  1 08:25:39 UTC 2024
+!Updated: 2024-11-01T08:25:39+00:00
 !Expires: 4 days
 !Homepage: https://anti-ad.net/
 !!!note! If you are using "AdGuard Home", please load https://anti-ad.net/easylist.txt
