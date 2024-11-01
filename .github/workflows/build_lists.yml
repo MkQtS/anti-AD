@@ -4,11 +4,6 @@ on:
   workflow_run:
     workflows: [Update upstream]
     types: [completed]
-  push:
-    branches:
-      - adlist-maker
-    paths:
-      - '*.php'
   workflow_dispatch:
 
 jobs:
