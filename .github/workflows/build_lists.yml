@@ -70,7 +70,7 @@ jobs:
         sudo apt-get install sing-box
 
     - name: Compile sing-box rule-set
-      working-directory: adlist-maker
+      working-directory: master
       run: |
         sing-box rule-set convert --type adguard ./anti-ad-adguard.txt --output ./anti-ad-sing-box.srs
         echo '========================================'
