@@ -5,6 +5,11 @@ on:
   workflow_run:
     workflows: [Update upstream]
     types: [completed]
+  push:
+    branches:
+      - adlist-maker
+    paths:
+      - '*.php'
 
 jobs:
   build:
@@ -88,7 +93,7 @@ jobs:
         cat ./master/anti-ad-domains.txt >./website/docs/domains.txt
         cat ./master/anti-ad-sing-box.srs >./website/docs/anti-ad-sing-box.srs
         echo '========================================'
-        ls -lha ./website/
+        ls -lha ./website/docs/
 
   #  - name: Commit and push
   #    working-directory: website
