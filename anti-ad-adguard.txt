@@ -1,11 +1,11 @@
 !Title: anti-AD for AdGuard
-!Version: 20241101082539205432430
-!Last modified: Fri Nov  1 08:25:39 UTC 2024
-!Updated: 2024-11-01T08:25:39+00:00
+!Version: 20241101083205195794998
+!Last modified: Fri Nov  1 08:32:05 UTC 2024
+!Updated: 2024-11-01T08:32:05+00:00
 !Expires: 4 days
 !Homepage: https://anti-ad.net/
 !!!note! If you are using "AdGuard Home", please load https://anti-ad.net/easylist.txt
-!Total lines: 91442
+!Total lines: 91443
 @@||ad.azure.com^
 @@||ads.taboola.com^
 @@||autocomplete.clearbit.com^
@@ -54002,6 +54002,7 @@
 ||mvo.myt7th.xyz^
 ||mytanwan.com^
 ||myteamdev.com^
+||a.mytest.com^
 ||mytestminer.xyz^
 ||nzmkzl.mytheresa.com^
 ||mythicsallies.com^

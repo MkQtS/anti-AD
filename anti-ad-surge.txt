@@ -1,7 +1,7 @@
 #TITLE=anti-AD
-#VER=20241101162538
+#VER=20241101163204
 #URL=https://github.com/privacy-protection-tools/anti-AD
-#TOTAL_LINES=92768
+#TOTAL_LINES=92769
 DOMAIN-SUFFIX,000dn.com
 DOMAIN-SUFFIX,0013.cc
 DOMAIN-SUFFIX,s8.001fzc.com
@@ -54799,6 +54799,7 @@ DOMAIN-SUFFIX,eco.myt7th.xyz
 DOMAIN-SUFFIX,mvo.myt7th.xyz
 DOMAIN-SUFFIX,mytanwan.com
 DOMAIN-SUFFIX,myteamdev.com
+DOMAIN-SUFFIX,a.mytest.com
 DOMAIN-SUFFIX,mytestminer.xyz
 DOMAIN-SUFFIX,nzmkzl.mytheresa.com
 DOMAIN-SUFFIX,mythicsallies.com
